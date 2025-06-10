@@ -1,0 +1,1121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey Lokol Akoo | Technical Skills Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header */
+        header {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(10px);
+            padding: 2rem 0;
+            text-align: center;
+            color: white;
+        }
+
+        header h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+
+        header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tabs ul {
+            display: flex;
+            justify-content: center;
+            list-style: none;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .nav-tabs button {
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: none;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .nav-tabs button:hover,
+        .nav-tabs button.active {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Main Content */
+        .skills-section {
+            padding: 4rem 0;
+            min-height: 100vh;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        /* Skills Grid */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .skill-category {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 2rem;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+
+        .skill-category:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.2);
+        }
+
+        .category-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #f0f0f0;
+        }
+
+        .category-icon {
+            font-size: 2.5rem;
+            margin-right: 1rem;
+        }
+
+        .category-title {
+            font-size: 1.5rem;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .skill-items {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .skill-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            background: #f8f9fa;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .skill-item:hover {
+            background: #e9ecef;
+            transform: translateX(5px);
+        }
+
+        .skill-info {
+            display: flex;
+            align-items: center;
+        }
+
+        .skill-logo {
+            width: 40px;
+            height: 40px;
+            margin-right: 1rem;
+            font-size: 2rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .skill-details h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+            color: #333;
+        }
+
+        .skill-details p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .skill-level {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .progress-bar {
+            width: 100px;
+            height: 8px;
+            background: #e9ecef;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            border-radius: 4px;
+            transition: width 1s ease-in-out;
+        }
+
+        .level-text {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: #667eea;
+        }
+
+        /* Specializations */
+        .specializations {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .specialization-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .specialization-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+        }
+
+        .spec-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .spec-title {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .spec-description {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        /* Tools Section */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .tool-item {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 1.5rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .tool-item:hover {
+            border-color: #667eea;
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+        }
+
+        .tool-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .tool-name {
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-tabs ul {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            header h1 {
+                font-size: 2rem;
+            }
+            
+            .tools-grid {
+                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Geoffrey Lokol Akoo</h1>
+            <p>Technical Skills & Expertise Portfolio</p>
+        </div>
+    </header>
+
+    <nav class="nav-tabs">
+        <div class="container">
+            <ul>
+                <li><button class="tab-btn active" data-tab="programming">Programming</button></li>
+                <li><button class="tab-btn" data-tab="web-dev">Web Development</button></li>
+                <li><button class="tab-btn" data-tab="networking">Networking</button></li>
+                <li><button class="tab-btn" data-tab="cybersecurity">Cybersecurity</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="skills-section">
+        <div class="container">
+            <!-- Programming Tab -->
+            <div id="programming" class="tab-content active">
+                <h2 class="section-title">Programming Languages & Frameworks</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">🐍</div>
+                            <div class="category-title">Python Development</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🐍</div>
+                                    <div class="skill-details">
+                                        <h4>Python Core</h4>
+                                        <p>Advanced Python programming</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🌐</div>
+                                    <div class="skill-details">
+                                        <h4>Django</h4>
+                                        <p>Web framework development</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🔬</div>
+                                    <div class="skill-details">
+                                        <h4>Data Science</h4>
+                                        <p>Pandas, NumPy, Matplotlib</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🤖</div>
+                                    <div class="skill-details">
+                                        <h4>Machine Learning</h4>
+                                        <p>Scikit-learn, TensorFlow</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">☕</div>
+                            <div class="category-title">Java Development</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">☕</div>
+                                    <div class="skill-details">
+                                        <h4>Java Core</h4>
+                                        <p>Object-oriented programming</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🍃</div>
+                                    <div class="skill-details">
+                                        <h4>Spring Framework</h4>
+                                        <p>Enterprise application development</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🏗️</div>
+                                    <div class="skill-details">
+                                        <h4>Maven/Gradle</h4>
+                                        <p>Build automation tools</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">💾</div>
+                            <div class="category-title">Other Languages</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">📊</div>
+                                    <div class="skill-details">
+                                        <h4>R Programming</h4>
+                                        <p>Statistical analysis & visualization</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🗃️</div>
+                                    <div class="skill-details">
+                                        <h4>SQL</h4>
+                                        <p>Database queries & optimization</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🐚</div>
+                                    <div class="skill-details">
+                                        <h4>Bash/Shell</h4>
+                                        <p>System automation & scripting</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Tab -->
+            <div id="web-dev" class="tab-content">
+                <h2 class="section-title">Web Development Technologies</h2>
+                <div class="skills-grid">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">🎨</div>
+                            <div class="category-title">Frontend Technologies</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">⚛️</div>
+                                    <div class="skill-details">
+                                        <h4>React.js</h4>
+                                        <p>Component-based UI development</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🟢</div>
+                                    <div class="skill-details">
+                                        <h4>Vue.js</h4>
+                                        <p>Progressive web applications</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🎯</div>
+                                    <div class="skill-details">
+                                        <h4>TypeScript</h4>
+                                        <p>Type-safe JavaScript development</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🎨</div>
+                                    <div class="skill-details">
+                                        <h4>CSS3 & Sass</h4>
+                                        <p>Modern styling & preprocessors</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">⚙️</div>
+                            <div class="category-title">Backend Development</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🟢</div>
+                                    <div class="skill-details">
+                                        <h4>Node.js</h4>
+                                        <p>Server-side JavaScript</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🚀</div>
+                                    <div class="skill-details">
+                                        <h4>Express.js</h4>
+                                        <p>Web application framework</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🍃</div>
+                                    <div class="skill-details">
+                                        <h4>MongoDB</h4>
+                                        <p>NoSQL database management</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🐘</div>
+                                    <div class="skill-details">
+                                        <h4>PostgreSQL</h4>
+                                        <p>Relational database systems</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">☁️</div>
+                            <div class="category-title">Cloud & DevOps</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🔶</div>
+                                    <div class="skill-details">
+                                        <h4>AWS</h4>
+                                        <p>Cloud infrastructure & services</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🐳</div>
+                                    <div class="skill-details">
+                                        <h4>Docker</h4>
+                                        <p>Containerization platform</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 80%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🎯</div>
+                                    <div class="skill-details">
+                                        <h4>Kubernetes</h4>
+                                        <p>Container orchestration</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 75%"></div></div>
+                                    <span class="level-text">Intermediate</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Networking Tab -->
+            <div id="networking" class="tab-content">
+                <h2 class="section-title">Network Engineering & Infrastructure</h2>
+                <div class="specializations">
+                    <div class="specialization-card">
+                        <div class="spec-icon">🌐</div>
+                        <div class="spec-title">Network Design & Architecture</div>
+                        <div class="spec-description">Designing scalable network infrastructures, implementing routing protocols (OSPF, BGP, EIGRP), and optimizing network performance for enterprise environments.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">🔧</div>
+                        <div class="spec-title">Network Administration</div>
+                        <div class="spec-description">Managing network devices, configuring switches and routers, implementing VLANs, and maintaining network security policies across complex infrastructures.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">📡</div>
+                        <div class="spec-title">Wireless Networks</div>
+                        <div class="spec-description">Designing and implementing wireless network solutions, including Wi-Fi infrastructure, mesh networks, and mobile connectivity optimization.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">🔍</div>
+                        <div class="spec-title">Network Monitoring</div>
+                        <div class="spec-description">Implementing comprehensive network monitoring solutions, performance analysis, and proactive troubleshooting using advanced monitoring tools.</div>
+                    </div>
+                </div>
+
+                <h3 style="color: white; text-align: center; margin: 3rem 0 2rem 0; font-size: 2rem;">Networking Tools & Technologies</h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">🔌</div>
+                        <div class="tool-name">Cisco IOS</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🌐</div>
+                        <div class="tool-name">Juniper JunOS</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔍</div>
+                        <div class="tool-name">Wireshark</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📊</div>
+                        <div class="tool-name">SolarWinds</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🛡️</div>
+                        <div class="tool-name">pfSense</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📡</div>
+                        <div class="tool-name">Ubiquiti</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔧</div>
+                        <div class="tool-name">Ansible</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📈</div>
+                        <div class="tool-name">Nagios</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🌊</div>
+                        <div class="tool-name">PRTG</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔒</div>
+                        <div class="tool-name">OpenVPN</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Cybersecurity Tab -->
+            <div id="cybersecurity" class="tab-content">
+                <h2 class="section-title">Cybersecurity Architecture & Engineering</h2>
+                <div class="specializations">
+                    <div class="specialization-card">
+                        <div class="spec-icon">🛡️</div>
+                        <div class="spec-title">Security Architecture</div>
+                        <div class="spec-description">Designing comprehensive security frameworks, developing security policies, and implementing enterprise-level security architectures that protect critical digital assets.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">🔍</div>
+                        <div class="spec-title">Penetration Testing</div>
+                        <div class="spec-description">Conducting thorough security assessments, vulnerability testing, and ethical hacking to identify and remediate security weaknesses in systems and networks.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">🚨</div>
+                        <div class="spec-title">Incident Response</div>
+                        <div class="spec-description">Developing and implementing incident response procedures, managing security breaches, and coordinating recovery efforts to minimize business impact.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">🔐</div>
+                        <div class="spec-title">Identity & Access Management</div>
+                        <div class="spec-description">Implementing robust authentication systems, multi-factor authentication, and access control mechanisms to ensure secure user identity management.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">🕵️</div>
+                        <div class="spec-title">Threat Intelligence</div>
+                        <div class="spec-description">Analyzing security threats, monitoring threat landscapes, and implementing proactive defense strategies based on current cyber threat intelligence.</div>
+                    </div>
+                    <div class="specialization-card">
+                        <div class="spec-icon">📊</div>
+                        <div class="spec-title">Security Analytics</div>
+                        <div class="spec-description">Implementing SIEM solutions, analyzing security logs, and developing automated threat detection systems using machine learning and data analytics.</div>
+                    </div>
+                </div>
+
+                <h3 style="color: white; text-align: center; margin: 3rem 0 2rem 0; font-size: 2rem;">Cybersecurity Tools & Platforms</h3>
+                <div class="tools-grid">
+                    <div class="tool-item">
+                        <div class="tool-icon">🛡️</div>
+                        <div class="tool-name">Splunk SIEM</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔍</div>
+                        <div class="tool-name">Nessus</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">⚔️</div>
+                        <div class="tool-name">Metasploit</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🐧</div>
+                        <div class="tool-name">Kali Linux</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔒</div>
+                        <div class="tool-name">Burp Suite</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🌐</div>
+                        <div class="tool-name">OWASP ZAP</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📊</div>
+                        <div class="tool-name">ELK Stack</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🛡️</div>
+                        <div class="tool-name">QRadar</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔐</div>
+                        <div class="tool-name">CyberArk</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">👁️</div>
+                        <div class="tool-name">Snort IDS</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔍</div>
+                        <div class="tool-name">Nmap</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🛡️</div>
+                        <div class="tool-name">Fortinet</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🔒</div>
+                        <div class="tool-name">Okta</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">📊</div>
+                        <div class="tool-name">Tableau</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🐍</div>
+                        <div class="tool-name">Python Security</div>
+                    </div>
+                    <div class="tool-item">
+                        <div class="tool-icon">🌊</div>
+                        <div class="tool-name">Shodan</div>
+                    </div>
+                </div>
+
+                <div class="skills-grid" style="margin-top: 3rem;">
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">🔍</div>
+                            <div class="category-title">Security Assessment</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🎯</div>
+                                    <div class="skill-details">
+                                        <h4>Vulnerability Assessment</h4>
+                                        <p>Comprehensive security scanning</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 95%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">⚔️</div>
+                                    <div class="skill-details">
+                                        <h4>Penetration Testing</h4>
+                                        <p>Ethical hacking & exploitation</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">📊</div>
+                                    <div class="skill-details">
+                                        <h4>Risk Assessment</h4>
+                                        <p>Security risk analysis & mitigation</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">🛡️</div>
+                            <div class="category-title">Security Operations</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">👁️</div>
+                                    <div class="skill-details">
+                                        <h4>SOC Management</h4>
+                                        <p>Security operations center oversight</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 85%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🚨</div>
+                                    <div class="skill-details">
+                                        <h4>Incident Management</h4>
+                                        <p>Security incident response & recovery</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 90%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🔐</div>
+                                    <div class="skill-details">
+                                        <h4>Compliance Management</h4>
+                                        <p>Regulatory compliance & auditing</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 82%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="skill-category">
+                        <div class="category-header">
+                            <div class="category-icon">🔒</div>
+                            <div class="category-title">Security Technologies</div>
+                        </div>
+                        <div class="skill-items">
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🔥</div>
+                                    <div class="skill-details">
+                                        <h4>Firewall Management</h4>
+                                        <p>Next-gen firewall configuration</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 92%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">🔐</div>
+                                    <div class="skill-details">
+                                        <h4>Encryption Technologies</h4>
+                                        <p>PKI, SSL/TLS, data encryption</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 88%"></div></div>
+                                    <span class="level-text">Expert</span>
+                                </div>
+                            </div>
+                            <div class="skill-item">
+                                <div class="skill-info">
+                                    <div class="skill-logo">👤</div>
+                                    <div class="skill-details">
+                                        <h4>Identity Management</h4>
+                                        <p>IAM, SSO, multi-factor authentication</p>
+                                    </div>
+                                </div>
+                                <div class="skill-level">
+                                    <div class="progress-bar"><div class="progress-fill" style="width: 86%"></div></div>
+                                    <span class="level-text">Advanced</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tab switching functionality
+        document.querySelectorAll('.tab-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                // Remove active class from all buttons and tabs
+                document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(tab => tab.classList.remove('active'));
+                
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                // Show corresponding tab content
+                const tabId = this.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+                
+                // Animate progress bars when tab becomes active
+                setTimeout(() => {
+                    animateProgressBars();
+                }, 100);
+            });
+        });
+
+        // Animate progress bars
+        function animateProgressBars() {
+            const activeTab = document.querySelector('.tab-content.active');
+            const progressBars = activeTab.querySelectorAll('.progress-fill');
+            
+            progressBars.forEach(bar => {
+                const width = bar.style.width;
+                bar.style.width = '0%';
+                setTimeout(() => {
+                    bar.style.width = width;
+                }, 100);
+            });
+        }
+
+        // Initial animation on page load
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                animateProgressBars();
+            }, 500);
+        });
+
+        // Intersection Observer for tool items
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0) scale(1)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to tool items
+        document.querySelectorAll('.tool-item, .specialization-card').forEach((item, index) => {
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(30px) scale(0.9)';
+            item.style.transition = `all 0.6s ease ${index * 0.05}s`;
+            observer.observe(item);
+        });
+
+        // Skill card hover effects
+        document.querySelectorAll('.skill-item').forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.style.transform = 'translateX(10px) scale(1.02)';
+                this.style.boxShadow = '0 8px 25px rgba(0,0,0,0.15)';
+            });
+            
+            item.addEventListener('mouseleave', function() {
+                this.style.transform = 'translateX(5px) scale(1)';
+                this.style.boxShadow = 'none';
+            });
+        });
+
+        // Dynamic background particles
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.style.position = 'fixed';
+            particle.style.width = '4px';
+            particle.style.height = '4px';
+            particle.style.background = 'rgba(255, 255, 255, 0.3)';
+            particle.style.borderRadius = '50%';
+            particle.style.pointerEvents = 'none';
+            particle.style.zIndex = '1';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.top = '100%';
+            particle.style.animation = 'floatUp 8s linear infinite';
+            
+            document.body.appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 8000);
+        }
+
+        // Add floating animation keyframes
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes floatUp {
+                from {
+                    transform: translateY(0) rotate(0deg);
+                    opacity: 1;
+                }
+                to {
+                    transform: translateY(-100vh) rotate(360deg);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Create particles periodically
+        setInterval(createParticle, 2000);
+    </script>
+</body>
+</html>

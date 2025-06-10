@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey's Online Profiles</title>
+    <style>
+        /* CSS Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 600px;
+            width: 100%;
+            margin: 0 auto;
+        }
+
+        .profile {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #fff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .profile h1 {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #222;
+        }
+
+        .profile p {
+            color: #666;
+            font-size: 1.1rem;
+        }
+
+        .links {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            width: 100%;
+        }
+
+        .link-card {
+            background: white;
+            border-radius: 10px;
+            padding: 15px 20px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: #333;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .link-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+        }
+
+        .github {
+            background-color: #333;
+            color: white;
+        }
+
+        .linkedin {
+            background-color: #0077b5;
+            color: white;
+        }
+
+        .instagram {
+            background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d);
+            color: white;
+        }
+
+        .link-text h3 {
+            font-size: 1.1rem;
+            margin-bottom: 3px;
+        }
+
+        .link-text p {
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        footer {
+            margin-top: 40px;
+            text-align: center;
+            color: #999;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 600px) {
+            .profile-img {
+                width: 120px;
+                height: 120px;
+            }
+            
+            .profile h1 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="profile">
+            <img src="https://via.placeholder.com/150" alt="Geoffrey's Profile Picture" class="profile-img" id="profileImage">
+            <h1 id="profileName">Geoffrey</h1>
+            <p id="profileTitle">Web Developer | Designer</p>
+        </div>
+
+        <div class="links">
+            <a href="https://github.com/geoffrey" class="link-card" id="githubLink" target="_blank">
+                <div class="link-icon github">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </div>
+                <div class="link-text">
+                    <h3>GitHub</h3>
+                    <p>Check out Geoffrey's projects and contributions</p>
+                </div>
+            </a>
+
+            <a href="https://linkedin.com/in/geoffrey" class="link-card" id="linkedinLink" target="_blank">
+                <div class="link-icon linkedin">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </div>
+                <div class="link-text">
+                    <h3>LinkedIn</h3>
+                    <p>Connect with Geoffrey professionally</p>
+                </div>
+            </a>
+
+            <a href="https://instagram.com/geoffrey" class="link-card" id="instagramLink" target="_blank">
+                <div class="link-icon instagram">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                        <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                        <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                    </svg>
+                </div>
+                <div class="link-text">
+                    <h3>Instagram</h3>
+                    <p>Follow Geoffrey for personal updates</p>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <footer>
+        <p>© <span id="currentYear"></span> Geoffrey. All Rights Reserved</p>
+    </footer>
+
+    <script>
+        // You can customize these values
+        const profileData = {
+            name: "Geoffrey",
+            title: "Web Developer | Designer",
+            imageUrl: "https://via.placeholder.com/150",
+            links: {
+                github: "https://github.com/geoffrey",
+                linkedin: "https://linkedin.com/in/geoffrey",
+                instagram: "https://instagram.com/geoffrey"
+            }
+        };
+
+        // Set profile data
+        document.addEventListener('DOMContentLoaded', function() {
+            // Profile info
+            document.getElementById('profileName').textContent = profileData.name;
+            document.getElementById('profileTitle').textContent = profileData.title;
+            document.getElementById('profileImage').src = profileData.imageUrl;
+            document.getElementById('profileImage').alt = `${profileData.name}'s Profile Picture`;
+            
+            // Links
+            document.getElementById('githubLink').href = profileData.links.github;
+            document.getElementById('linkedinLink').href = profileData.links.linkedin;
+            document.getElementById('instagramLink').href = profileData.links.instagram;
+            
+            // Current year
+            document.getElementById('currentYear').textContent = new Date().getFullYear();
+            
+            // Animation on load
+            const links = document.querySelectorAll('.link-card');
+            links.forEach((link, index) => {
+                link.style.opacity = '0';
+                link.style.transform = 'translateY(20px)';
+                link.style.animation = `fadeInUp 0.5s ease forwards ${index * 0.1 + 0.3}s`;
+            });
+            
+            // Add keyframes dynamically
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes fadeInUp {
+                    from {
+                        opacity: 0;
+                        transform: translateY(20px);
+                    }
+                    to {
+                        opacity: 1;
+                        transform: translateY(0);
+                    }
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>

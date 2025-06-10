@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey's Educational Profile</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #3498db;
+            --accent-color: #e74c3c;
+            --light-color: #ecf0f1;
+            --dark-color: #2c3e50;
+            --success-color: #27ae60;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1, h2, h3 {
+            margin-bottom: 15px;
+        }
+        
+        .profile-section {
+            background-color: white;
+            border-radius: 5px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-card {
+            display: flex;
+            margin-bottom: 30px;
+            border-radius: 5px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .education-header {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 20px;
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .cisco-header {
+            background-color: var(--accent-color);
+        }
+        
+        .education-content {
+            padding: 20px;
+            background-color: white;
+            flex-grow: 1;
+        }
+        
+        .education-duration {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+        
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 0.8em;
+        }
+        
+        .projects-container {
+            margin-top: 20px;
+        }
+        
+        .project-item {
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .project-item:last-child {
+            border-bottom: none;
+        }
+        
+        .project-tech {
+            font-style: italic;
+            color: #666;
+            margin-top: 5px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--secondary-color);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+            margin-top: 20px;
+        }
+        
+        .btn:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-export {
+            background-color: var(--success-color);
+        }
+        
+        .btn-export:hover {
+            background-color: #219653;
+        }
+        
+        @media (max-width: 768px) {
+            .education-card {
+                flex-direction: column;
+            }
+            
+            .education-header {
+                min-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Geoffrey's Educational Profile</h1>
+            <p>ICT Graduate | Cybersecurity Specialist</p>
+        </header>
+        
+        <div class="profile-section">
+            <h2>Education Background</h2>
+            
+            <!-- JOOUST ICT Degree -->
+            <div class="education-card">
+                <div class="education-header">
+                    <h3>Jaramogi Oginga Odinga University of Science and Technology</h3>
+                    <p>Bachelor's Degree</p>
+                </div>
+                <div class="education-content">
+                    <h3>Information and Communication Technology (ICT)</h3>
+                    <div class="education-duration">September 2020 - May 2024</div>
+                    
+                    <p>Comprehensive 4-year program covering all aspects of modern information and communication technologies.</p>
+                    
+                    <h4>Key Skills Acquired:</h4>
+                    <div class="skills-container">
+                        <span class="skill-tag">Programming (Python, Java, C++)</span>
+                        <span class="skill-tag">Database Management</span>
+                        <span class="skill-tag">Web Development</span>
+                        <span class="skill-tag">Network Administration</span>
+                        <span class="skill-tag">System Analysis</span>
+                        <span class="skill-tag">Software Engineering</span>
+                        <span class="skill-tag">Mobile App Development</span>
+                        <span class="skill-tag">Project Management</span>
+                    </div>
+                    
+                    <div class="projects-container">
+                        <h4>Notable Projects:</h4>
+                        <div class="project-item">
+                            <strong>Student Management System</strong>
+                            <p>Web-based system for managing student records with PHP, MySQL, and JavaScript</p>
+                            <div class="project-tech">Technologies: PHP, MySQL, HTML, CSS, JavaScript</div>
+                        </div>
+                        <div class="project-item">
+                            <strong>Network Infrastructure Design</strong>
+                            <p>Designed network topology for small business using Cisco Packet Tracer</p>
+                            <div class="project-tech">Technologies: Cisco Packet Tracer, Network Protocols</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Cisco Cybersecurity Certification -->
+            <div class="education-card">
+                <div class="education-header cisco-header">
+                    <h3>Cisco Networking Academy</h3>
+                    <p>Professional Certification</p>
+                </div>
+                <div class="education-content">
+                    <h3>Cybersecurity Specialist</h3>
+                    <div class="education-duration">January 2024 - August 2024</div>
+                    
+                    <p>Intensive training program covering essential cybersecurity concepts and practical skills.</p>
+                    
+                    <h4>Key Skills Acquired:</h4>
+                    <div class="skills-container">
+                        <span class="skill-tag">Network Security</span>
+                        <span class="skill-tag">Threat Detection</span>
+                        <span class="skill-tag">Incident Response</span>
+                        <span class="skill-tag">Firewall Configuration</span>
+                        <span class="skill-tag">Vulnerability Assessment</span>
+                        <span class="skill-tag">Ethical Hacking</span>
+                        <span class="skill-tag">Security Auditing</span>
+                        <span class="skill-tag">Penetration Testing</span>
+                    </div>
+                    
+                    <div class="projects-container">
+                        <h4>Notable Projects:</h4>
+                        <div class="project-item">
+                            <strong>Network Security Assessment</strong>
+                            <p>Comprehensive security audit of enterprise network infrastructure</p>
+                            <div class="project-tech">Technologies: Nmap, Wireshark, Cisco ASA, Nessus</div>
+                        </div>
+                        <div class="project-item">
+                            <strong>Firewall Configuration Lab</strong>
+                            <p>Configured and tested enterprise firewall rules</p>
+                            <div class="project-tech">Technologies: Cisco ASA, pfSense, iptables</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="profile-section">
+            <h2>Professional Summary</h2>
+            <p>Geoffrey is a qualified ICT professional with a Bachelor's degree in Information and Communication Technology from JOOUST and professional cybersecurity certification from Cisco Networking Academy.</p>
+            
+            <h3>Core Competencies:</h3>
+            <ul style="margin-left: 20px; margin-top: 10px;">
+                <li>Software Development & Programming</li>
+                <li>Network Security & Infrastructure</li>
+                <li>Database Management & Web Development</li>
+                <li>Cybersecurity & Threat Analysis</li>
+                <li>Project Management & Technical Documentation</li>
+            </ul>
+            
+            <button class="btn btn-export" onclick="exportProfile()">Export Profile</button>
+        </div>
+    </div>
+
+    <script>
+        function exportProfile() {
+            const profileData = {
+                name: "Geoffrey",
+                education: [
+                    {
+                        institution: "Jaramogi Oginga Odinga University of Science and Technology",
+                        degree: "Bachelor's Degree",
+                        field: "Information and Communication Technology (ICT)",
+                        duration: "September 2020 - May 2024",
+                        skills: [
+                            "Programming (Python, Java, C++)",
+                            "Database Management",
+                            "Web Development",
+                            "Network Administration",
+                            "System Analysis",
+                            "Software Engineering",
+                            "Mobile App Development",
+                            "Project Management"
+                        ],
+                        projects: [
+                            {
+                                name: "Student Management System",
+                                description: "Web-based system for managing student records with PHP, MySQL, and JavaScript",
+                                technologies: ["PHP", "MySQL", "HTML", "CSS", "JavaScript"]
+                            },
+                            {
+                                name: "Network Infrastructure Design",
+                                description: "Designed network topology for small business using Cisco Packet Tracer",
+                                technologies: ["Cisco Packet Tracer", "Network Protocols"]
+                            }
+                        ]
+                    },
+                    {
+                        institution: "Cisco Networking Academy",
+                        degree: "Professional Certification",
+                        field: "Cybersecurity Specialist",
+                        duration: "January 2024 - August 2024",
+                        skills: [
+                            "Network Security",
+                            "Threat Detection",
+                            "Incident Response",
+                            "Firewall Configuration",
+                            "Vulnerability Assessment",
+                            "Ethical Hacking",
+                            "Security Auditing",
+                            "Penetration Testing"
+                        ],
+                        projects: [
+                            {
+                                name: "Network Security Assessment",
+                                description: "Comprehensive security audit of enterprise network infrastructure",
+                                technologies: ["Nmap", "Wireshark", "Cisco ASA", "Nessus"]
+                            },
+                            {
+                                name: "Firewall Configuration Lab",
+                                description: "Configured and tested enterprise firewall rules",
+                                technologies: ["Cisco ASA", "pfSense", "iptables"]
+                            }
+                        ]
+                    }
+                ],
+                summary: "Qualified ICT professional with expertise in software development and cybersecurity",
+                profileGenerated: new Date().toISOString()
+            };
+            
+            const dataStr = JSON.stringify(profileData, null, 2);
+            const dataUri = 'data:application/json;charset=utf-8,'+ encodeURIComponent(dataStr);
+            const exportFileDefaultName = 'geoffrey_education_profile.json';
+            
+            const linkElement = document.createElement('a');
+            linkElement.setAttribute('href', dataUri);
+            linkElement.setAttribute('download', exportFileDefaultName);
+            linkElement.click();
+        }
+    </script>
+</body>
+</html>

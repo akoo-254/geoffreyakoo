@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geoffrey's Portfolio - Projects</title>
+    <style>
+        /* CSS Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 0;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+        }
+
+        .projects-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .project-card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 1.5rem;
+        }
+
+        .project-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.75rem;
+            color: #2c3e50;
+        }
+
+        .project-goal {
+            color: #7f8c8d;
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .project-description {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-stack {
+            margin-bottom: 1.5rem;
+        }
+
+        .tech-title {
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+            color: #2c3e50;
+        }
+
+        .tech-items {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .tech-item {
+            background-color: #e0f7fa;
+            color: #00838f;
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: 500;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .demo-link {
+            background-color: #3498db;
+            color: white;
+        }
+
+        .demo-link:hover {
+            background-color: #2980b9;
+        }
+
+        .code-link {
+            background-color: #f1f1f1;
+            color: #333;
+            border: 1px solid #ddd;
+        }
+
+        .code-link:hover {
+            background-color: #e0e0e0;
+        }
+
+        footer {
+            background-color: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 1.5rem 0;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .projects-container {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>My Projects</h1>
+            <p class="subtitle">A showcase of my technical work and solutions</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="projects-container">
+            <!-- Project 1: Personal Website -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Personal Website" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Personal Portfolio Website</h2>
+                    <p class="project-goal">Goal: Create an online presence to showcase my skills and projects</p>
+                    <div class="project-description">
+                        <p>A responsive personal website that displays my professional profile, skills, projects, and contact information. Designed with a clean, modern interface that works across all devices.</p>
+                    </div>
+                    <div class="tech-stack">
+                        <h3 class="tech-title">Technologies Used:</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">HTML5</span>
+                            <span class="tech-item">CSS3</span>
+                            <span class="tech-item">JavaScript</span>
+                            <span class="tech-item">Git</span>
+                            <span class="tech-item">VS Code</span>
+                            <span class="tech-item">Netlify</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link demo-link">Live Demo</a>
+                        <a href="#" class="project-link code-link">View Code</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Project 2: Small Office Network Setup -->
+            <div class="project-card">
+                <img src="https://images.unsplash.com/photo-1581092921461-39b2f2f8a4b6?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80" alt="Office Network Setup" class="project-image">
+                <div class="project-content">
+                    <h2 class="project-title">Small Office Network Setup</h2>
+                    <p class="project-goal">Goal: Design and implement a secure, reliable network for a 15-person office</p>
+                    <div class="project-description">
+                        <p>Designed and deployed a complete network infrastructure including wired and wireless connectivity, network security, shared resources, and remote access capabilities for a small business environment.</p>
+                    </div>
+                    <div class="tech-stack">
+                        <h3 class="tech-title">Technologies Used:</h3>
+                        <div class="tech-items">
+                            <span class="tech-item">Cisco Switches</span>
+                            <span class="tech-item">Ubiquiti APs</span>
+                            <span class="tech-item">PfSense</span>
+                            <span class="tech-item">VLANs</span>
+                            <span class="tech-item">Windows Server</span>
+                            <span class="tech-item">NAS</span>
+                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="#" class="project-link demo-link">Case Study</a>
+                        <a href="#" class="project-link code-link">Network Diagram</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Additional project cards can be added here following the same structure -->
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; <span id="currentYear"></span> Geoffrey's Portfolio. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Animation for project cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.project-card');
+            
+            projectCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(20px)';
+                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+                
+                setTimeout(() => {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }, 150 * index);
+            });
+        });
+    </script>
+</body>
+</html>
